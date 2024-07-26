@@ -49,6 +49,12 @@ public class App {
                     break;
             }
             System.out.println(result);
+            if(result_index > 9){ // result_index가 10이 되면 배열 한칸씩 옮기고 result_index 는 9로 돌아옴
+                for (int i = 0; i < 9; i++) {
+                    results[i] = results[i+1];
+                }
+                result_index = 9;
+            }
             results[result_index] = result;
             result_index += 1;
             System.out.println(Arrays.toString(results));
@@ -61,6 +67,7 @@ public class App {
             }
         }
         //LV 1-5
+        //LV 1-6
 
 
 
