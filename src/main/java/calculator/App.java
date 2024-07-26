@@ -1,11 +1,14 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         // LV 1-1
         Scanner sc = new Scanner(System.in);
+        int[] results = new int[10];
+        int result_index = 0;
         boolean end_flag = true;
         while(end_flag) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -27,36 +30,39 @@ public class App {
             switch (operation) {
                 case '+':
                     result = num1 + num2;
-                    System.out.println("결과: " + result);
                     break;
 
                 case '-':
                     result = num1 - num2;
-                    System.out.println("결과: " + result);
                     break;
 
                 case '*':
                     result = num1 * num2;
-                    System.out.println("결과: " + result);
                     break;
 
                 case '/':
                     if (num2 == 0) {
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
                     } else {
-                        float div_result = (float) num1 / num2;
-                        System.out.println("결과: " + div_result);
+                        result = num1 / num2;
                     }
                     break;
             }
+            System.out.println(result);
+            results[result_index] = result;
+            result_index += 1;
+            System.out.println(Arrays.toString(results));
+
             //LV 1-4
-            System.out.println("더 계산하시려면 아무키나 누르고 엔터키를 누르세요. (exit 입력 시 종료)");
+            System.out.println("더 계산하시려면 아무 키나 누르고 엔터키를 누르세요. (exit 입력 시 종료)");
             String answer = sc.next();
             if (answer.equals("exit")) {
                 end_flag = false;
             }
         }
         //LV 1-5
+
+
 
     }
 }
