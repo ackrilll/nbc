@@ -50,14 +50,20 @@ public class App {
                     break;
             }
             System.out.println(result);
-
             result_List.add(result);
-            System.out.println(result_List);
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String answer_remove = sc.next();
             if(answer_remove.equals( "remove")){
                 result_List.remove(0);
             }
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String answer_inquiry = sc.next();
+            if(answer_inquiry.equals("inquiry")){
+                for(int inquiry_result : result_List){
+                    System.out.println(inquiry_result);
+                }
+            }
+
             /* 위 요구사항에 맞게 구현 */
 
             //LV 1-4
@@ -70,6 +76,7 @@ public class App {
         //LV 1-5
         //LV 1-6
         //LV 1-7
+        //LV 1-8
 
 
     }
