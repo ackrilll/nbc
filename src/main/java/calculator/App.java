@@ -1,14 +1,15 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         // LV 1-1
         Scanner sc = new Scanner(System.in);
-        int[] results = new int[10];
-        int result_index = 0;
+        List<Integer> result_List = new ArrayList<>();
         boolean end_flag = true;
         while(end_flag) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -49,15 +50,15 @@ public class App {
                     break;
             }
             System.out.println(result);
-            if(result_index > 9){ // result_index가 10이 되면 배열 한칸씩 옮기고 result_index 는 9로 돌아옴
-                for (int i = 0; i < 9; i++) {
-                    results[i] = results[i+1];
-                }
-                result_index = 9;
+
+            result_List.add(result);
+            System.out.println(result_List);
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String answer_remove = sc.next();
+            if(answer_remove.equals( "remove")){
+                result_List.remove(0);
             }
-            results[result_index] = result;
-            result_index += 1;
-            System.out.println(Arrays.toString(results));
+            /* 위 요구사항에 맞게 구현 */
 
             //LV 1-4
             System.out.println("더 계산하시려면 아무 키나 누르고 엔터키를 누르세요. (exit 입력 시 종료)");
@@ -68,7 +69,7 @@ public class App {
         }
         //LV 1-5
         //LV 1-6
-
+        //LV 1-7
 
 
     }
