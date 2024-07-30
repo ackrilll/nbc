@@ -7,11 +7,11 @@ public class ArithmeticCalculator extends Calculator{
     int num2;
     char operation;
     int result;
-    private ArrayList<Integer> resultList = new ArrayList<>();
+
 
 
     public ArithmeticCalculator(){
-        resultList.clear();
+        getResultList().clear();
     }
 
     public int calculate(int inputNum1, int inputNum2, char inputOperation) throws DevException,OperationException{
@@ -20,7 +20,8 @@ public class ArithmeticCalculator extends Calculator{
         this.num1 = inputNum1;
         this.num2 = inputNum2;
         if( inputOperation != '+'&&inputOperation != '-'&&
-                inputOperation != '*'&&inputOperation != '/'){
+            inputOperation != '*'&&inputOperation != '/'&&
+            inputOperation!='%'){
             throw new OperationException();
         }
         this.operation = inputOperation;
@@ -44,11 +45,17 @@ public class ArithmeticCalculator extends Calculator{
                     result = div(num1,num2);
                 }
                 break;
+
+            case '%':
+               result = mod(num1,num2);
+               break;
         }
-        resultList.add(result);
+        getResultList().add(result);
         return result;
         //lv 2-1
         //lv 2-2
 
     }
+
+
 }

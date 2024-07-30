@@ -13,6 +13,7 @@ public class Calculator {
     private SubtractOperator subtractOperator;
     private MultiplyOperator multiplyOperator;
     private DivideOperator divideOperator;
+    private ModOperator modOperator;
 
     // 생성자
     public Calculator(){
@@ -22,6 +23,7 @@ public class Calculator {
         subtractOperator = new SubtractOperator();
         multiplyOperator = new MultiplyOperator();
         divideOperator = new DivideOperator();
+        modOperator = new ModOperator();
     }
 
 
@@ -61,6 +63,9 @@ public class Calculator {
     }
     public int div(int n, int m){
         return divideOperator.divCalculate(n,m);
+    }
+    public int mod(int n, int m){
+        return modOperator.modCalculate(n,m);
     }
 
 }
