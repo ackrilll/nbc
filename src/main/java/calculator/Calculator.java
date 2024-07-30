@@ -47,6 +47,7 @@ public class Calculator {
         //lv 2-2
 
     }
+
     public ArrayList<Integer> getResultList(){
         return resultList;
     }
