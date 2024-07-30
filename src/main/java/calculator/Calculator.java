@@ -10,6 +10,11 @@ public class Calculator {
     int result;
     private ArrayList<Integer>resultList = new ArrayList<>();
 
+    // 생성자
+    public Calculator(){
+        resultList.clear();
+    }
+
     public int calculate(int inputNum1, int inputNum2, char inputOperation) throws DevException,OperationException{
         /* 위 요구사항에 맞게 구현 */
         /* return 연산 결과 */
