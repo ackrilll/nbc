@@ -4,15 +4,19 @@ import java.util.ArrayList;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-     int num1;
+    int num1;
     int num2;
     char operation;
     int result;
     private ArrayList<Integer>resultList = new ArrayList<>();
+    private ArrayList<Double>circleResultList = new ArrayList<>();
+    final double pi = 3.14159265359; // pi는 상수 이므로 final 붙여줌
+    private double circle_s;
 
     // 생성자
     public Calculator(){
         resultList.clear();
+        circleResultList.clear();
     }
 
     public int calculate(int inputNum1, int inputNum2, char inputOperation) throws DevException,OperationException{
@@ -70,6 +74,19 @@ public class Calculator {
             System.out.println(result);
         }
     }
+    public double calculateCircleArea(double r) {
+        /* 원의 넓이 계산 구현 */
+        circle_s = r*r*pi;
+        circleResultList.add(circle_s);
+        return circle_s;
+    }
+    public double getCircle_s(){
+        return circle_s;
+    }
+    public void setCircle_s(double s){
+        this.circle_s = s;
+    }
+    /* 원의 넓이 저장 필드 Getter, Setter, 조회 메서드 구현 */
 }
 
 
