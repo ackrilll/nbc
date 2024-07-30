@@ -9,6 +9,7 @@ public class ArithmeticCalculator extends Calculator{
     int result;
     private ArrayList<Integer> resultList = new ArrayList<>();
 
+
     public ArithmeticCalculator(){
         resultList.clear();
     }
@@ -25,22 +26,22 @@ public class ArithmeticCalculator extends Calculator{
         this.operation = inputOperation;
         switch (operation) {
             case '+':
-                result = num1 + num2;
+                result = add(num1,num2);
                 break;
 
             case '-':
-                result = num1 - num2;
+                result = sub(num1,num2);
                 break;
 
             case '*':
-                result = num1 * num2;
+                result = mul(num1,num2);
                 break;
 
             case '/':
                 if (num2 == 0) {
                     throw new DevException();
                 } else {
-                    result = num1 / num2;
+                    result = div(num1,num2);
                 }
                 break;
         }
