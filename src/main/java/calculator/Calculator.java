@@ -58,6 +58,12 @@ public class Calculator {
         /* 구현 */
         resultList.remove(0);
     }
+    public void inquiryResults() {
+        /* 구현 */
+        for(int result : resultList){
+            System.out.println(result);
+        }
+    }
 }
 
 

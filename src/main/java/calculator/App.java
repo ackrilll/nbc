@@ -44,9 +44,7 @@ public class App {
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String answer_inquiry = sc.next();
             if(answer_inquiry.equals("inquiry")){
-                for(int inquiry_result : result_List){
-                    System.out.println(inquiry_result);
-                }
+                calculator.inquiryResults();
             }
 
             /* 위 요구사항에 맞게 구현 */
