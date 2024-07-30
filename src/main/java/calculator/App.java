@@ -10,14 +10,15 @@ public class App {
         // LV 1-1
         Scanner sc = new Scanner(System.in);
         boolean end_flag = true;
-        Calculator calculator = new Calculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
+        ArithmeticCalculator arithmeticCalculator =new ArithmeticCalculator();
         while(end_flag) {
             System.out.println("원의 넓이를 구하려면 circle을 입력하세요.(일반 사칙연산은 아무키나 누르고 엔터를 누르세요): ");
             String Iscircle = sc.next();
             if(Iscircle.equals("circle")){
                 System.out.println("원의 반지름은 얼마입니까?: ");
                 double r = sc.nextDouble();
-                double result = calculator.calculateCircleArea(r);
+                double result = circleCalculator.calculateCircleArea(r);
                 System.out.println(result);
             }else {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -35,19 +36,19 @@ public class App {
 
                 //LV 1-3
 
-                int result = calculator.calculate(num1,num2,operation);
+                int result = arithmeticCalculator.calculate(num1,num2,operation);
                 System.out.println(result);
 
 
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String answer_remove = sc.next();
                 if(answer_remove.equals( "remove")){
-                    calculator.removeResult();
+                    arithmeticCalculator.removeResult();
                 }
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 String answer_inquiry = sc.next();
                 if(answer_inquiry.equals("inquiry")){
-                    calculator.inquiryResults();
+                    arithmeticCalculator.inquiryResults();
                 }
 
                 /* 위 요구사항에 맞게 구현 */
