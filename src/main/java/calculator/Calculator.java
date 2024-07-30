@@ -54,6 +54,10 @@ public class Calculator {
         this.resultList = List;
     }
     //lv 2-3
+    public void removeResult() {
+        /* 구현 */
+        resultList.remove(0);
+    }
 }
 
 

@@ -9,8 +9,10 @@ public class App {
     public static void main(String[] args) throws DevException, OperationException {
         // LV 1-1
         Scanner sc = new Scanner(System.in);
-        List<Integer> result_List = new ArrayList<>();
+        ArrayList<Integer> result_List = new ArrayList<>();
         boolean end_flag = true;
+        Calculator calculator = new Calculator();
+        calculator.setResultList(result_List);
         while(end_flag) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -27,11 +29,13 @@ public class App {
 
             //LV 1-3
             int result;
-            Calculator calculator = new Calculator();
             result = calculator.calculate(num1,num2,operation);
+
 
             System.out.println(result);
             result_List.add(result);
+            calculator.setResultList(result_List);
+q
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String answer_remove = sc.next();
             if(answer_remove.equals( "remove")){
