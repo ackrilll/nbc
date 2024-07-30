@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DevException, OperationException {
         // LV 1-1
         Scanner sc = new Scanner(System.in);
         List<Integer> result_List = new ArrayList<>();
@@ -26,29 +26,10 @@ public class App {
             char operation = sc.next().charAt(0);
 
             //LV 1-3
-            int result = 0;
-            /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
-            switch (operation) {
-                case '+':
-                    result = num1 + num2;
-                    break;
+            int result;
+            Calculator calculator = new Calculator();
+            result = calculator.calculate(num1,num2,operation);
 
-                case '-':
-                    result = num1 - num2;
-                    break;
-
-                case '*':
-                    result = num1 * num2;
-                    break;
-
-                case '/':
-                    if (num2 == 0) {
-                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
-                    } else {
-                        result = num1 / num2;
-                    }
-                    break;
-            }
             System.out.println(result);
             result_List.add(result);
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
@@ -78,6 +59,7 @@ public class App {
         //LV 1-7
         //LV 1-8
 
+        //Lv 2-2
 
     }
 }
