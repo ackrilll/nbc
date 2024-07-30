@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    int num1;
+     int num1;
     int num2;
     char operation;
     int result;
-    ArrayList<Integer>resultList = new ArrayList<>();
+    private ArrayList<Integer>resultList = new ArrayList<>();
 
     public int calculate(int inputNum1, int inputNum2, char inputOperation) throws DevException,OperationException{
         /* 위 요구사항에 맞게 구현 */
@@ -44,7 +44,16 @@ public class Calculator {
         resultList.add(result);
         return result;
         //lv 2-1
+        //lv 2-2
+
     }
+    public ArrayList<Integer> getResultList(){
+        return resultList;
+    }
+    public void setResultList(ArrayList<Integer> List){
+        this.resultList = List;
+    }
+    //lv 2-3
 }
 
 
